@@ -1,19 +1,20 @@
 import React, { Component } from "react";
 
 export class NewsItem extends Component {
+
   render() {
-    let {title, description} = this.props
+    let {title, description, imageUrl, newsUrl} = this.props
     return (
-      <div>
+      <div className="my-3">
         <div className="card" style={{width : "18rem"}}>
-          <img src="https:////m.files.bbci.co.uk/modules/bbc-morph-sport-seo-meta/1.22.0/images/bbc-sport-logo.png" className="card-img-top" alt="..." />
+          <img src={imageUrl} alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
+            <h5 className="card-title">{title}...</h5>
             <p className="card-text">
-              {description}
+              {description}....
             </p>
-            <a href="/" className="btn btn-primary">
-              Go somewhere
+            <a href={newsUrl} target = "_blank" className="btn btn-sm btn-primary" rel="noreferrer">
+              Read More
             </a>
           </div>
         </div>
@@ -23,3 +24,4 @@ export class NewsItem extends Component {
 }
 
 export default NewsItem;
+
